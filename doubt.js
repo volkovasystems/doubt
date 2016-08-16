@@ -109,6 +109,15 @@ var doubt = function doubt( array, condition ){
 	}
 
 	if( typeof condition == "string" ){
+		if( typeof array == "string" ||
+			typeof array == "number" ||
+			typeof array == "boolean" ||
+			typeof array == "undefined" ||
+			typeof array == "symbol" )
+		{
+			return false;
+		}
+
 		if( condition == ARRAY ){
 			return Array.isArray( array );
 
