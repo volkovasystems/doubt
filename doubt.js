@@ -131,14 +131,9 @@ var doubt = function doubt( array, condition ){
 					} ) );
 
 		}else if( condition == ITERABLE ){
-			if( typeof Symbol == "function" &&
-				typeof Symbol.iterator == "symbol" )
-			{
-				return ( Symbol.iterator in array );
-
-			}else{
-				return false;
-			}
+			return ( typeof Symbol == "function" &&
+				typeof Symbol.iterator == "symbol" &&
+				!!array[ Symbol.iterator ] );
 
 		}else{
 			return false;
