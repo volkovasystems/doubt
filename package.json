@@ -1,0 +1,31 @@
+{
+  "name": "doubt",
+  "version": "0.0.0",
+  "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
+  "main": "doubt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/doubt.git"
+  },
+  "keywords": [
+    "check",
+    "array",
+    "arguments",
+    "iterable",
+    "array-like",
+    "doubt"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/doubt/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/doubt#readme",
+  "dependencies": {
+    "harden": "^0.3.3",
+    "raze": "0.0.5"
+  }
+}
