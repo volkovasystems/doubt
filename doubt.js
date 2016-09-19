@@ -29,14 +29,14 @@
 
 	@module-configuration:
 		{
-			"package": "olivant",
-			"path": "olivant/olivant.js",
-			"file": "olivant.js",
-			"module": "olivant",
+			"package": "doubt",
+			"path": "doubt/doubt.js",
+			"file": "doubt.js",
+			"module": "doubt",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
-			"repository": "https://github.com/volkovasystems/olivant.git",
-			"test": "olivant-test.js",
+			"repository": "https://github.com/volkovasystems/doubt.git",
+			"test": "doubt-test.js",
 			"global": true
 		}
 	@end-module-configuration
