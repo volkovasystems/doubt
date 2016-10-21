@@ -113,7 +113,8 @@ var doubt = function doubt( array, condition ){
 			typeof array == "number" ||
 			typeof array == "boolean" ||
 			typeof array == "undefined" ||
-			typeof array == "symbol" )
+			typeof array == "symbol" ||
+			array === null )
 		{
 			return false;
 		}
