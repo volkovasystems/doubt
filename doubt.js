@@ -42,6 +42,8 @@
 	@end-module-configuration
 
 	@module-documentation:
+		Finally, the one that will fix your doubts if array is an array,
+			arguments, iterable or array-like.
 	@end-module-documentation
 
 	@include:
@@ -150,7 +152,7 @@ var doubt = function doubt( array, condition ){
 		}
 
 	}else{
-		var result = { };
+		let result = { };
 
 		harden( "ARRAY", doubt( array, ARRAY ), result );
 		harden( "AS_ARRAY", doubt( array, AS_ARRAY ), result );
