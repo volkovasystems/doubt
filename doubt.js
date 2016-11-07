@@ -49,23 +49,14 @@
 	@include:
 		{
 			"harden": "harden",
-			"raze": "raze"
+			"protype": "protype"
 		}
 	@end-include
 */
 
-//: @support-module:
-	if( !Array.isArray ){
-		Array.isArray = function isArray( parameter ){
-			return Object.prototype.toString.call( parameter ) === "[object Array]";
-		};
-	}
-//: @end-support-module
-
-
-if( typeof window == "undefined" ){
+if( typeof require == "function" ){
 	var harden = require( "harden" );
-	var raze = require( "raze" );
+	var protype = require( "protype" );
 }
 
 if( typeof window != "undefined" &&
@@ -75,10 +66,15 @@ if( typeof window != "undefined" &&
 }
 
 if( typeof window != "undefined" &&
-	!( "raze" in window ) )
+	!( "protype" in window ) )
 {
-	throw new Error( "raze is not defined" );
+	throw new Error( "protype is not defined" );
 }
+
+//: @support-module:
+	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+	Array.isArray||(Array.isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)});
+//: @end-support-module
 
 harden( "ARRAY", "array" );
 harden( "AS_ARRAY", "as-array" );
@@ -86,7 +82,7 @@ harden( "ARGUMENTS", "arguments" );
 harden( "ARRAY_LIKE", "array-like" );
 harden( "ITERABLE", "iterable" );
 
-var doubt = function doubt( array, condition ){
+this.doubt = function doubt( array, condition ){
 	/*;
 		@meta-configuration:
 			{
@@ -100,7 +96,8 @@ var doubt = function doubt( array, condition ){
 		@end-meta-configuration
 	*/
 
-	if( typeof condition == "string" &&
+	let conditionType = protype( condition );
+	if( conditionType.STRING &&
 		condition != ARRAY &&
 		condition != AS_ARRAY &&
 		condition != ARGUMENTS &&
@@ -110,12 +107,13 @@ var doubt = function doubt( array, condition ){
 		throw new Error( "invalid condition" );
 	}
 
-	if( typeof condition == "string" ){
-		if( typeof array == "string" ||
-			typeof array == "number" ||
-			typeof array == "boolean" ||
-			typeof array == "undefined" ||
-			typeof array == "symbol" ||
+	if( conditionType.STRING ){
+		let arrayType = protype( array );
+		if( arrayType.STRING ||
+			arrayType.NUMBER ||
+			arrayType.BOOLEAN ||
+			arrayType.UNDEFINED ||
+			arrayType.SYMBOL ||
 			array === null )
 		{
 			return false;
@@ -131,15 +129,15 @@ var doubt = function doubt( array, condition ){
 				doubt( array, ITERABLE ) );
 
 		}else if( condition == ARGUMENTS ){
-			return ( typeof array == "object" &&
+			return ( protype( array ).OBJECT &&
 				( /Arguments/ ).test( array.toString( ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
-			return ( typeof array.length == "number" &&
+			return ( protype( array.length, NUMBER ) &&
 				!!Object.keys( array ).length &&
 				Object.keys( array )
 					.some( function onEachIndex( index ){
-						return ( typeof index == "number" );
+						return protype( index, NUMBER );
 					} ) );
 
 		}else if( condition == ITERABLE ){
@@ -160,26 +158,12 @@ var doubt = function doubt( array, condition ){
 		harden( "ARRAY_LIKE", doubt( array, ARRAY_LIKE ), result );
 		harden( "ITERABLE", doubt( array, ITERABLE ), result );
 
-		result.valueOf = function valueOf( ){
-			return ( result.ARGUMENTS? ARGUMENTS :
-				result.ITERABLE? ITERABLE :
-				result.ARRAY_LIKE? ARRAY_LIKE :
-				result.ARRAY? ARRAY :
-				typeof array );
-		};
-
-		result.toString = function toString( ){
-			return result.valueOf( );
-		};
-
-		harden( "value", function value( ){
-			return raze( array );
-		}, result );
-
 		return result;
 	}
 };
 
-if( typeof module != "undefined" ){
-	module.exports = doubt;
+if( typeof module != "undefined" &&
+	typeof module.exports != "undefined" )
+{
+	module.exports = this.doubt;
 }
