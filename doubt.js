@@ -48,6 +48,7 @@
 
 	@include:
 		{
+			"cemento": "cemento",
 			"harden": "harden",
 			"protype": "protype"
 		}
@@ -55,19 +56,20 @@
 */
 
 if( typeof require == "function" ){
+	var cemento = require( "cemento" );
 	var harden = require( "harden" );
 	var protype = require( "protype" );
 }
 
-if( typeof window != "undefined" &&
-	!( "harden" in window ) )
-{
+if( typeof window != "undefined" && !( "cemento" in window ) ){
+	throw new Error( "cemento is not defined" );
+}
+
+if( typeof window != "undefined" && !( "harden" in window ) ){
 	throw new Error( "harden is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "protype" in window ) )
-{
+if( typeof window != "undefined" && !( "protype" in window ) ){
 	throw new Error( "protype is not defined" );
 }
 
@@ -82,7 +84,7 @@ harden( "ARGUMENTS", "arguments" );
 harden( "ARRAY_LIKE", "array-like" );
 harden( "ITERABLE", "iterable" );
 
-this.doubt = function doubt( array, condition ){
+var doubt = function doubt( array, condition ){
 	/*;
 		@meta-configuration:
 			{
@@ -150,20 +152,16 @@ this.doubt = function doubt( array, condition ){
 		}
 
 	}else{
-		let result = { };
-
-		harden( "ARRAY", doubt( array, ARRAY ), result );
-		harden( "AS_ARRAY", doubt( array, AS_ARRAY ), result );
-		harden( "ARGUMENTS", doubt( array, ARGUMENTS ), result );
-		harden( "ARRAY_LIKE", doubt( array, ARRAY_LIKE ), result );
-		harden( "ITERABLE", doubt( array, ITERABLE ), result );
-
-		return result;
+		return cemento( {
+			"ARRAY": doubt( array, ARRAY ),
+			"AS_ARRAY": doubt( array, AS_ARRAY ),
+			"ARGUMENTS": doubt( array, ARGUMENTS ),
+			"ARRAY_LIKE": doubt( array, ARRAY_LIKE ),
+			"ITERABLE": doubt( array, ITERABLE )
+		} );
 	}
 };
 
-if( typeof module != "undefined" &&
-	typeof module.exports != "undefined" )
-{
-	module.exports = this.doubt;
+if( typeof module != "undefined" && typeof module.exports != "undefined" ){
+	module.exports = doubt;
 }
