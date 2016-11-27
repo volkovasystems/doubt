@@ -1,6 +1,6 @@
 {
   "name": "doubt",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "scripts": {
@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/volkovasystems/doubt#readme",
   "dependencies": {
-    "cemento": "^0.2.0",
+    "cemento": "^0.3.0",
     "harden": "^0.7.0",
-    "protype": "^0.3.0"
+    "protype": "^0.4.0"
   }
 }
