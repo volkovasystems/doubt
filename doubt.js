@@ -55,23 +55,9 @@
 	@end-include
 */
 
-if( typeof require == "function" ){
-	var cemento = require( "cemento" );
-	var harden = require( "harden" );
-	var protype = require( "protype" );
-}
-
-if( typeof window != "undefined" && !( "cemento" in window ) ){
-	throw new Error( "cemento is not defined" );
-}
-
-if( typeof window != "undefined" && !( "harden" in window ) ){
-	throw new Error( "harden is not defined" );
-}
-
-if( typeof window != "undefined" && !( "protype" in window ) ){
-	throw new Error( "protype is not defined" );
-}
+const cemento = require( "cemento" );
+const harden = require( "harden" );
+const protype = require( "protype" );
 
 //: @support-module:
 	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
@@ -84,7 +70,7 @@ harden( "ARGUMENTS", "arguments" );
 harden( "ARRAY_LIKE", "array-like" );
 harden( "ITERABLE", "iterable" );
 
-var doubt = function doubt( array, condition ){
+const doubt = function doubt( array, condition ){
 	/*;
 		@meta-configuration:
 			{
@@ -162,6 +148,4 @@ var doubt = function doubt( array, condition ){
 	}
 };
 
-if( typeof module != "undefined" && typeof module.exports != "undefined" ){
-	module.exports = doubt;
-}
+module.exports = doubt;
