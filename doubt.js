@@ -34,6 +34,9 @@
 			"file": "doubt.js",
 			"module": "doubt",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/doubt.git",
 			"test": "doubt-test.js",
@@ -129,8 +132,8 @@ const doubt = function doubt( array, condition ){
 					} ) );
 
 		}else if( condition == ITERABLE ){
-			return ( typeof Symbol == "function" &&
-				typeof Symbol.iterator == "symbol" &&
+			return ( protype( Symbol, FUNCTION ) &&
+				protype( Symbol.iterator, SYMBOL ) &&
 				!!array[ Symbol.iterator ] );
 
 		}else{
