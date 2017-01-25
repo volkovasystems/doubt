@@ -2,4 +2,4 @@
 
 const doubt = require( "./doubt.js" );
 
-console.log( doubt( [ ] ) );
+console.log( doubt( [ 1 ] ) );
