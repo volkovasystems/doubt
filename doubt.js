@@ -52,6 +52,7 @@
 	@include:
 		{
 			"cemento": "cemento",
+			"falzy": "falzy",
 			"harden": "harden",
 			"protype": "protype"
 		}
@@ -59,13 +60,11 @@
 */
 
 const cemento = require( "cemento" );
+const falzy = require( "falzy" );
 const harden = require( "harden" );
 const protype = require( "protype" );
 
-//: @support-module:
-	//: @reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
-	Array.isArray||(Array.isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)});
-//: @end-support-module
+const ARGUMENTS_CLASS_PATTERN = /Arguments/;
 
 harden( "ARRAY", "array" );
 harden( "AS_ARRAY", "as-array" );
@@ -87,29 +86,24 @@ const doubt = function doubt( array, condition ){
 		@end-meta-configuration
 	*/
 
-	let conditionType = protype( condition );
-	if( conditionType.STRING &&
-		condition != ARRAY &&
-		condition != AS_ARRAY &&
-		condition != ARGUMENTS &&
-		condition != ARRAY_LIKE &&
-		condition != ITERABLE )
+	if( falzy( array ) ||
+		protype( array, STRING, NUMBER, BOOLEAN, SYMBOL ) ||
+ 		JSON.stringify( { } ) === "{}" )
+	{
+		return false;
+	}
+
+	if( arguments.length === 2 &&
+		condition !== ARRAY &&
+		condition !== AS_ARRAY &&
+		condition !== ARGUMENTS &&
+		condition !== ARRAY_LIKE &&
+		condition !== ITERABLE )
 	{
 		throw new Error( "invalid condition" );
 	}
 
-	if( conditionType.STRING ){
-		let arrayType = protype( array );
-		if( arrayType.STRING ||
-			arrayType.NUMBER ||
-			arrayType.BOOLEAN ||
-			arrayType.UNDEFINED ||
-			arrayType.SYMBOL ||
-			array === null )
-		{
-			return false;
-		}
-
+	if( arguments.length === 2 ){
 		if( condition == ARRAY ){
 			return Array.isArray( array );
 
@@ -120,16 +114,14 @@ const doubt = function doubt( array, condition ){
 				doubt( array, ITERABLE ) );
 
 		}else if( condition == ARGUMENTS ){
-			return ( protype( array ).OBJECT &&
-				( /Arguments/ ).test( array.toString( ) ) );
+			return ( protype( array, OBJECT ) &&
+				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
-			return ( protype( array.length, NUMBER ) &&
-				!!Object.keys( array ).length &&
-				Object.keys( array )
-					.some( function onEachIndex( index ){
-						return protype( index, NUMBER );
-					} ) );
+			let key = Object.keys( array );
+
+			return ( protype( array.length, NUMBER ) && key.length > 0 &&
+				key.some( ( index ) => { return protype( index, NUMBER ); } ) );
 
 		}else if( condition == ITERABLE ){
 			return ( protype( Symbol, FUNCTION ) &&

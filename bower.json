@@ -1,6 +1,6 @@
 {
   "name": "doubt",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "support": "doubt.support.js",
@@ -27,8 +27,5 @@
     "tests"
   ],
   "dependencies": {
-    "cemento": "^0.7.0",
-    "harden": "^0.14.0",
-    "protype": "^0.11.0"
   }
 }

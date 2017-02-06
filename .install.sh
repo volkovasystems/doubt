@@ -1,6 +1,7 @@
 yarn add \
 babel-runtime \
 cemento \
+falzy \
 harden \
 protype \
 --save && \
@@ -14,6 +15,7 @@ webpack \
 --dev && \
 bower install \
 cemento \
+falzy \
 harden \
 protype \
 --save
