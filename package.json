@@ -5,6 +5,7 @@
   "main": "doubt.js",
   "support": "doubt.support.js",
   "deploy": "doubt.deploy.js",
+  "browser": "doubt.deploy.js",
   "scripts": {
     "build": "babel doubt.js -o doubt.support.js && webpack",
     "test": "mocha doubt-test.js"
@@ -31,7 +32,18 @@
   },
   "homepage": "https://github.com/volkovasystems/doubt#readme",
   "dependencies": {
+    "babel-runtime": "^6.22.0",
+    "cemento": "^0.8.0",
+    "falzy": "^0.11.0",
+    "harden": "^0.14.0",
+    "protype": "^0.15.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "source-map-loader": "^0.1.6",
+    "webpack": "^2.2.1"
   }
 }
