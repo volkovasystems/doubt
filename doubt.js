@@ -88,7 +88,7 @@ const doubt = function doubt( array, condition ){
 
 	if( falzy( array ) ||
 		protype( array, STRING, NUMBER, BOOLEAN, SYMBOL ) ||
- 		JSON.stringify( { } ) === "{}" )
+ 		JSON.stringify( array ) === "{}" )
 	{
 		return false;
 	}
