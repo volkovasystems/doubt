@@ -1530,6 +1530,12 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
+kount@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/kount/-/kount-0.7.0.tgz#ffcf367ef7cd68f6e37034b61d5569d4af5bcdd9"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"

@@ -8,3 +8,4 @@ console.log( doubt( [ ], ARRAY ) );
 console.log( doubt( { } ) );
 console.log( doubt( ) );
 console.log( doubt( [ 1, 2, 3 ], ARRAY ) );
+console.log( doubt( { }, ARRAY ) );
