@@ -1,6 +1,6 @@
 {
   "name": "doubt",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "support": "doubt.support.js",
