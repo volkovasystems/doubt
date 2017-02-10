@@ -1,6 +1,7 @@
 yarn add \
 babel-runtime \
 cemento \
+circular-json \
 falzy \
 harden \
 protype \
@@ -15,6 +16,7 @@ webpack \
 --dev && \
 bower install \
 cemento \
+circular-json \
 falzy \
 harden \
 protype \

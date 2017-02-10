@@ -54,6 +54,7 @@
 			"cemento": "cemento",
 			"falzy": "falzy",
 			"harden": "harden",
+			"json": "circular-json",
 			"protype": "protype"
 		}
 	@end-include
@@ -62,6 +63,7 @@
 const cemento = require( "cemento" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
+const json = require( "circular-json" );
 const protype = require( "protype" );
 
 const ARGUMENTS_CLASS_PATTERN = /Arguments/;
@@ -88,7 +90,7 @@ const doubt = function doubt( array, condition ){
 
 	if( falzy( array ) ||
 		protype( array, STRING, NUMBER, BOOLEAN, SYMBOL ) ||
- 		JSON.stringify( array ) === "{}" )
+		json.stringify( array ) === "{}" )
 	{
 		return false;
 	}
