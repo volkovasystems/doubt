@@ -1,13 +1,13 @@
 {
   "name": "doubt",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "support": "doubt.support.js",
   "deploy": "doubt.deploy.js",
   "browser": "doubt.deploy.js",
   "scripts": {
-    "build": "babel doubt.js -o doubt.support.js && webpack --progress",
+    "build": "babel doubt.js --out-file doubt.support.js --source-maps && webpack --progress",
     "test": "mocha doubt-test.js"
   },
   "repository": {
@@ -32,13 +32,13 @@
   },
   "homepage": "https://github.com/volkovasystems/doubt#readme",
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "cemento": "^0.9.0",
+    "babel-runtime": "^6.23.0",
+    "cemento": "^0.11.0",
     "circular-json": "^0.3.1",
-    "falzy": "^0.12.0",
-    "harden": "^0.15.0",
-    "kount": "^0.8.0",
-    "protype": "^0.16.0"
+    "falzy": "^0.13.0",
+    "harden": "^0.16.0",
+    "kount": "^0.9.0",
+    "protype": "^0.17.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
