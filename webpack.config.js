@@ -7,7 +7,6 @@ module.exports = {
 	"entry": "./doubt.support.js",
 	"resolve": {
 		"descriptionFiles": [
-			".bower.json",
 			"bower.json",
 			"package.json"
 		],
@@ -22,15 +21,15 @@ module.exports = {
 			"main"
 		]
 	},
-	// "module": {
-	// 	"rules": [
-	// 		{
-	// 			"enforce": "pre",
-	// 			"test": /\.support\.js$/,
-	// 			"loader": "source-map-loader"
-	// 		}
-	// 	]
-	// },
+	"module": {
+		"rules": [
+			{
+				"test": /\.support\.js$/,
+				"loader": "source-map-loader",
+				"enforce": "pre"
+			}
+		]
+	},
 	"output": {
 		"library": "doubt",
 		"libraryTarget": "umd",
@@ -48,5 +47,5 @@ module.exports = {
 			"mangle": false
 		} )
 	],
-	"devtool": "#cheap-module-inline-source-map"
+	"devtool": "#source-map"
 };
