@@ -9,3 +9,7 @@ console.log( doubt( { } ) );
 console.log( doubt( ) );
 console.log( doubt( [ 1, 2, 3 ], ARRAY ) );
 console.log( doubt( { }, ARRAY ) );
+
+( function ( ){
+	console.log( doubt( arguments, AS_ARRAY ) );
+} )( );

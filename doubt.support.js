@@ -55,7 +55,7 @@
               			"falzy": "falzy",
               			"harden": "harden",
               			"json": "circular-json",
-              			"kount": "kount",
+              			"khount": "khount",
               			"protype": "protype"
               		}
               	@end-include
@@ -65,7 +65,7 @@ var cemento = require("cemento");
 var falzy = require("falzy");
 var harden = require("harden");
 var json = require("circular-json");
-var kount = require("kount");
+var khount = require("khount");
 var protype = require("protype");
 
 var ARGUMENTS_CLASS_PATTERN = /Arguments/;
@@ -92,7 +92,7 @@ var doubt = function doubt(array, condition) {
 
 	if (falzy(array) ||
 	protype(array, STRING, NUMBER, BOOLEAN, SYMBOL) ||
-	kount(array) == 0 &&
+	khount(array) == 0 &&
 	json.stringify(array) === "{}")
 	{
 		return false;

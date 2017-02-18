@@ -4,7 +4,7 @@ cemento \
 circular-json \
 falzy \
 harden \
-kount \
+khount \
 protype \
 --save && \
 yarn add \
@@ -20,6 +20,7 @@ cemento \
 circular-json \
 falzy \
 harden \
-kount \
+khount \
 protype \
---save
+--save \
+--force-latest
