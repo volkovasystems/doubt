@@ -1,6 +1,6 @@
 {
   "name": "doubt",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "support": "doubt.support.js",
@@ -38,7 +38,8 @@
     "falzy": "^0.13.0",
     "harden": "^0.16.0",
     "khount": "^0.0.0",
-    "protype": "^0.17.0"
+    "protype": "^0.17.0",
+    "stringe": "^0.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",

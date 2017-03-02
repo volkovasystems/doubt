@@ -56,6 +56,7 @@
 			"harden": "harden",
 			"json": "circular-json",
 			"khount": "khount",
+			"stringe": "stringe",
 			"protype": "protype"
 		}
 	@end-include
@@ -66,9 +67,10 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
+const stringe = require( "stringe" );
 const protype = require( "protype" );
 
-const ARGUMENTS_CLASS_PATTERN = /Arguments/;
+const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
 
 harden( "ARRAY", "array" );
 harden( "AS_ARRAY", "as-array" );
@@ -120,7 +122,7 @@ const doubt = function doubt( array, condition ){
 
 		}else if( condition == ARGUMENTS ){
 			return ( protype( array, OBJECT ) &&
-				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) ) );
+				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );

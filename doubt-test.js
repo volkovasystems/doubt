@@ -11,5 +11,9 @@ console.log( doubt( [ 1, 2, 3 ], ARRAY ) );
 console.log( doubt( { }, ARRAY ) );
 
 ( function ( ){
-	console.log( doubt( arguments, AS_ARRAY ) );
+	console.log( "arguments as array", doubt( arguments, AS_ARRAY ) );
+} )( );
+
+( function ( ){
+	console.log( "arguments as arguments", doubt( arguments, ARGUMENTS ) );
 } )( );
