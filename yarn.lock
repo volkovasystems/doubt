@@ -791,12 +791,12 @@ caseless@~0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.11.0.tgz#715b96ea9841593cc33067923f5ec60ebda4f7d7"
 
-cemento@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.11.0.tgz#b74a68611dde34724ecf57e3fd9e17f7603ed120"
+cemento@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.12.0.tgz#4d32a7470b25bf4fc803c501da1deca6ed16f418"
   dependencies:
     babel-runtime "^6.23.0"
-    harden "^0.16.0"
+    harden "^0.17.0"
 
 center-align@^0.1.1:
   version "0.1.3"
@@ -1100,12 +1100,12 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
-falzy@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.13.0.tgz#635912d0abbf444eb1140b66e7311fd3a72c0502"
+falzy@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.14.0.tgz#62ac707d9fe29f339417e152316442b47e76af65"
   dependencies:
     babel-runtime "^6.23.0"
-    protype "^0.17.0"
+    protype "^0.18.0"
 
 filename-regex@^2.0.0:
   version "2.0.0"
@@ -1260,9 +1260,9 @@ har-validator@~2.0.6:
     is-my-json-valid "^2.12.4"
     pinkie-promise "^2.0.0"
 
-harden@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/harden/-/harden-0.16.0.tgz#5c0a7ec0b35baf4425c79d8c8a8cbdef443a6b57"
+harden@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/harden/-/harden-0.17.0.tgz#c109a6bae8ef170fdfe64cbce15f32131a3ef41a"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -1891,13 +1891,13 @@ process@^0.11.0:
   version "0.11.9"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.9.tgz#7bd5ad21aa6253e7da8682264f1e11d11c0318c1"
 
-protype@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/protype/-/protype-0.17.0.tgz#40589ea6e1a20d9b537fa0d9f035ad40c4e5b91d"
+protype@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/protype/-/protype-0.18.0.tgz#1c0861d71e58a146e8824382ad3aaeead69e14c3"
   dependencies:
     babel-runtime "^6.23.0"
-    cemento "^0.11.0"
-    harden "^0.16.0"
+    cemento "^0.12.0"
+    harden "^0.17.0"
 
 prr@~0.0.0:
   version "0.0.0"
@@ -2325,8 +2325,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 uglify-js@^2.7.5:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.4.tgz#5aeb6fd6f1f0a672dea63795016590502c290513"
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.5.tgz#ae9f5b143f4183d99a1dabb350e243fdc06641ed"
   dependencies:
     async "~0.2.6"
     source-map "~0.5.1"
