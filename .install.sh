@@ -5,8 +5,9 @@ circular-json \
 falzy \
 harden \
 khount \
-stringe \
 protype \
+stringe \
+truly \
 --save && \
 yarn add \
 babel-cli \
@@ -22,7 +23,8 @@ circular-json \
 falzy \
 harden \
 khount \
-stringe \
 protype \
+stringe \
+truly \
 --save \
 --force-latest

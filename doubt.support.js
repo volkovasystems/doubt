@@ -45,8 +45,7 @@
               	@end-module-configuration
               
               	@module-documentation:
-              		Finally, the one that will fix your doubts if array is an array,
-              			arguments, iterable or array-like.
+              		Checks entity if array, arguments, iterable or array-like.
               	@end-module-documentation
               
               	@include:
@@ -56,8 +55,9 @@
               			"harden": "harden",
               			"json": "circular-json",
               			"khount": "khount",
+              			"protype": "protype",
               			"stringe": "stringe",
-              			"protype": "protype"
+              			"truly": "truly"
               		}
               	@end-include
               */var _iterator = require("babel-runtime/core-js/symbol/iterator");var _iterator2 = _interopRequireDefault(_iterator);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _keys = require("babel-runtime/core-js/object/keys");var _keys2 = _interopRequireDefault(_keys);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
@@ -67,15 +67,16 @@ var falzy = require("falzy");
 var harden = require("harden");
 var json = require("circular-json");
 var khount = require("khount");
-var stringe = require("stringe");
 var protype = require("protype");
+var stringe = require("stringe");
+var truly = require("truly");
 
 var ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
 
 harden("ARRAY", "array");
-harden("AS_ARRAY", "as-array");
 harden("ARGUMENTS", "arguments");
 harden("ARRAY_LIKE", "array-like");
+harden("AS_ARRAY", "as-array");
 harden("ITERABLE", "iterable");
 
 var doubt = function doubt(array, condition) {
@@ -87,38 +88,41 @@ var doubt = function doubt(array, condition) {
                                               				"Array",
                                               				"Arguments"
                                               			],
-                                              			"condition": "string"
+                                              			"condition": [
+                                              				"string",
+                                              				ARRAY,
+                                              				ARGUMENTS,
+                                              				ARRAY_LIKE,
+                                              				AS_ARRAY,
+                                              				ITERABLE
+                                              			]
                                               		}
                                               	@end-meta-configuration
                                               */
 
 	if (falzy(array) ||
 	protype(array, STRING, NUMBER, BOOLEAN, SYMBOL) ||
-	khount(array) == 0 &&
-	json.stringify(array) === "{}")
+	khount(array) == 0 && json.stringify(array) === "{}")
 	{
 		return false;
 	}
 
-	if (arguments.length === 2 &&
-	condition !== ARRAY &&
-	condition !== AS_ARRAY &&
-	condition !== ARGUMENTS &&
-	condition !== ARRAY_LIKE &&
-	condition !== ITERABLE)
-	{
-		throw new Error("invalid condition");
-	}
-
 	if (arguments.length === 2) {
+		if (condition !== ARRAY &&
+		condition !== AS_ARRAY &&
+		condition !== ARGUMENTS &&
+		condition !== ARRAY_LIKE &&
+		condition !== ITERABLE)
+		{
+			throw new Error("invalid condition");
+		}
+
 		if (condition == ARRAY) {
 			return Array.isArray(array);
 
 		} else if (condition == AS_ARRAY) {
-			return doubt(array, ARRAY) ||
-			doubt(array, ARGUMENTS) ||
-			doubt(array, ARRAY_LIKE) ||
-			doubt(array, ITERABLE);
+			return doubt(array, ARRAY) || doubt(array, ARGUMENTS) ||
+			doubt(array, ARRAY_LIKE) || doubt(array, ITERABLE);
 
 		} else if (condition == ARGUMENTS) {
 			return protype(array, OBJECT) &&
@@ -131,9 +135,8 @@ var doubt = function doubt(array, condition) {
 			key.some(function (index) {return protype(index, NUMBER);});
 
 		} else if (condition == ITERABLE) {
-			return protype(_symbol2.default, FUNCTION) &&
-			protype(_iterator2.default, SYMBOL) &&
-			!!array[_iterator2.default];
+			return protype(_symbol2.default, FUNCTION) && protype(_iterator2.default, SYMBOL) &&
+			truly(array[_iterator2.default]);
 
 		} else {
 			return false;

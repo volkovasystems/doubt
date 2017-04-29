@@ -1,7 +1,7 @@
 {
   "name": "doubt",
-  "version": "0.25.0",
-  "description": "Finally, the one that will fix your doubts if array is an array, arguments, iterable or array-like.",
+  "version": "0.26.0",
+  "description": "Checks entity if array, arguments, iterable or array-like.",
   "main": "doubt.js",
   "support": "doubt.support.js",
   "deploy": "doubt.deploy.js",
@@ -16,6 +16,7 @@
   },
   "keywords": [
     "check",
+    "entity",
     "array",
     "arguments",
     "iterable",
@@ -39,7 +40,8 @@
     "harden": "^0.21.0",
     "khount": "^0.0.0",
     "protype": "^0.21.0",
-    "stringe": "^0.2.0"
+    "stringe": "^0.3.0",
+    "truly": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

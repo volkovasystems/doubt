@@ -45,8 +45,7 @@
 	@end-module-configuration
 
 	@module-documentation:
-		Finally, the one that will fix your doubts if array is an array,
-			arguments, iterable or array-like.
+		Checks entity if array, arguments, iterable or array-like.
 	@end-module-documentation
 
 	@include:
@@ -56,8 +55,9 @@
 			"harden": "harden",
 			"json": "circular-json",
 			"khount": "khount",
+			"protype": "protype",
 			"stringe": "stringe",
-			"protype": "protype"
+			"truly": "truly"
 		}
 	@end-include
 */
@@ -67,15 +67,16 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
-const stringe = require( "stringe" );
 const protype = require( "protype" );
+const stringe = require( "stringe" );
+const truly = require( "truly" );
 
 const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
 
 harden( "ARRAY", "array" );
-harden( "AS_ARRAY", "as-array" );
 harden( "ARGUMENTS", "arguments" );
 harden( "ARRAY_LIKE", "array-like" );
+harden( "AS_ARRAY", "as-array" );
 harden( "ITERABLE", "iterable" );
 
 const doubt = function doubt( array, condition ){
@@ -87,38 +88,41 @@ const doubt = function doubt( array, condition ){
 					"Array",
 					"Arguments"
 				],
-				"condition": "string"
+				"condition": [
+					"string",
+					ARRAY,
+					ARGUMENTS,
+					ARRAY_LIKE,
+					AS_ARRAY,
+					ITERABLE
+				]
 			}
 		@end-meta-configuration
 	*/
 
 	if( falzy( array ) ||
 		protype( array, STRING, NUMBER, BOOLEAN, SYMBOL ) ||
-		( khount( array ) == 0 &&
-			json.stringify( array ) === "{}" ) )
+		( khount( array ) == 0 && json.stringify( array ) === "{}" ) )
 	{
 		return false;
 	}
 
-	if( arguments.length === 2 &&
-		condition !== ARRAY &&
-		condition !== AS_ARRAY &&
-		condition !== ARGUMENTS &&
-		condition !== ARRAY_LIKE &&
-		condition !== ITERABLE )
-	{
-		throw new Error( "invalid condition" );
-	}
-
 	if( arguments.length === 2 ){
+		if( condition !== ARRAY &&
+			condition !== AS_ARRAY &&
+			condition !== ARGUMENTS &&
+			condition !== ARRAY_LIKE &&
+			condition !== ITERABLE )
+		{
+			throw new Error( "invalid condition" );
+		}
+
 		if( condition == ARRAY ){
 			return Array.isArray( array );
 
 		}else if( condition == AS_ARRAY ){
-			return ( doubt( array, ARRAY ) ||
-				doubt( array, ARGUMENTS ) ||
-				doubt( array, ARRAY_LIKE ) ||
-				doubt( array, ITERABLE ) );
+			return ( doubt( array, ARRAY ) || doubt( array, ARGUMENTS ) ||
+				doubt( array, ARRAY_LIKE ) || doubt( array, ITERABLE ) );
 
 		}else if( condition == ARGUMENTS ){
 			return ( protype( array, OBJECT ) &&
@@ -128,12 +132,11 @@ const doubt = function doubt( array, condition ){
 			let key = Object.keys( array );
 
 			return ( protype( array.length, NUMBER ) && key.length > 0 &&
-				key.some( ( index ) => { return protype( index, NUMBER ); } ) );
+				key.some( ( index ) => protype( index, NUMBER ) ) );
 
 		}else if( condition == ITERABLE ){
-			return ( protype( Symbol, FUNCTION ) &&
-				protype( Symbol.iterator, SYMBOL ) &&
-				!!array[ Symbol.iterator ] );
+			return ( protype( Symbol, FUNCTION ) && protype( Symbol.iterator, SYMBOL ) &&
+				truly( array[ Symbol.iterator ] ) );
 
 		}else{
 			return false;

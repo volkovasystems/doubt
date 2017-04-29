@@ -1,19 +1,26 @@
-"use strict";
-
 const util = require( "util" );
+
+const assert = require( "assert" );
 const doubt = require( "./doubt.js" );
 
-console.log( util.inspect( doubt( [ ] ), { "showHidden": true } ) );
-console.log( doubt( [ ], ARRAY ) );
-console.log( doubt( { } ) );
-console.log( doubt( ) );
-console.log( doubt( [ 1, 2, 3 ], ARRAY ) );
-console.log( doubt( { }, ARRAY ) );
+assert.equal( doubt( Infinity, AS_ARRAY ), false, "should be false" );
 
-( function ( ){
-	console.log( "arguments as array", doubt( arguments, AS_ARRAY ) );
-} )( );
+assert.equal( doubt( NaN, AS_ARRAY ), false, "should be false" );
 
-( function ( ){
-	console.log( "arguments as arguments", doubt( arguments, ARGUMENTS ) );
-} )( );
+assert.equal( doubt( false, AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( "", AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( "hello world", AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( 123, AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( undefined, AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( { }, AS_ARRAY ), false, "should be false" );
+
+assert.equal( doubt( [ ], AS_ARRAY ), true, "should be true" );
+
+assert.equal( doubt( ( ( ) => arguments )( ), ARGUMENTS ), true, "should be true" );
+
+console.log( "ok" );
