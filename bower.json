@@ -1,12 +1,13 @@
 {
   "name": "doubt",
-  "version": "0.27.0",
+  "version": "0.28.0",
   "description": "Checks entity if array, arguments, iterable or array-like.",
   "main": "doubt.deploy.js",
   "support": "doubt.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
