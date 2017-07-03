@@ -34,10 +34,11 @@
 			"file": "doubt.js",
 			"module": "doubt",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/doubt.git",
 			"test": "doubt-test.js",
 			"global": true
@@ -125,17 +126,17 @@ const doubt = function doubt( array, condition ){
 				doubt( array, ARRAY_LIKE ) || doubt( array, ITERABLE ) );
 
 		}else if( condition == ARGUMENTS ){
-			return ( protype( array, OBJECT ) &&
+			return ( typeof array == "object" &&
 				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );
 
-			return ( protype( array.length, NUMBER ) && key.length > 0 &&
+			return ( typeof array.length == "number" && key.length > 0 &&
 				key.some( ( index ) => protype( index, NUMBER ) ) );
 
 		}else if( condition == ITERABLE ){
-			return ( protype( Symbol, FUNCTION ) && protype( Symbol.iterator, SYMBOL ) &&
+			return ( typeof Symbol == "function" && typeof Symbol.iterator == "symbol" &&
 				truly( array[ Symbol.iterator ] ) );
 
 		}else{
