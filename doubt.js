@@ -57,7 +57,6 @@
 			"json": "circular-json",
 			"khount": "khount",
 			"protype": "protype",
-			"stringe": "stringe",
 			"truly": "truly"
 		}
 	@end-include
@@ -69,7 +68,6 @@ const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
 const protype = require( "protype" );
-const stringe = require( "stringe" );
 const truly = require( "truly" );
 
 const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -127,7 +125,7 @@ const doubt = function doubt( array, condition ){
 
 		}else if( condition == ARGUMENTS ){
 			return ( typeof array == "object" &&
-				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) ) );
+				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );
