@@ -130,11 +130,11 @@ const doubt = function doubt( array, condition ){
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );
 
-			return ( typeof array.length == "number" && key.length > 0 &&
-				key.some( ( index ) => protype( index, NUMBER ) ) );
+			return ( typeof array.length == NUMBER && key.length > 0 &&
+				key.some( ( index ) => typeof index == NUMBER ) );
 
 		}else if( condition == ITERABLE ){
-			return ( typeof Symbol == "function" && typeof Symbol.iterator == "symbol" &&
+			return ( typeof Symbol == FUNCTION && typeof Symbol.iterator == SYMBOL &&
 				truly( array[ Symbol.iterator ] ) );
 
 		}else{
