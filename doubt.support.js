@@ -130,11 +130,11 @@ var doubt = function doubt(array, condition) {
 		} else if (condition == ARRAY_LIKE) {
 			var key = (0, _keys2.default)(array);
 
-			return typeof array.length == "number" && key.length > 0 &&
-			key.some(function (index) {return protype(index, NUMBER);});
+			return (0, _typeof3.default)(array.length) == NUMBER && key.length > 0 &&
+			key.some(function (index) {return (typeof index === "undefined" ? "undefined" : (0, _typeof3.default)(index)) == NUMBER;});
 
 		} else if (condition == ITERABLE) {
-			return typeof _symbol2.default == "function" && (0, _typeof3.default)(_iterator2.default) == "symbol" &&
+			return (typeof _symbol2.default === "undefined" ? "undefined" : (0, _typeof3.default)(_symbol2.default)) == FUNCTION && (0, _typeof3.default)(_iterator2.default) == SYMBOL &&
 			truly(array[_iterator2.default]);
 
 		} else {
