@@ -34,10 +34,11 @@
               			"file": "doubt.js",
               			"module": "doubt",
               			"author": "Richeve S. Bebedor",
-              			"contributors": [
-              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-              			],
               			"eMail": "richeve.bebedor@gmail.com",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+              				"Vinse Vinalon <vinsevinalon@gmail.com>"
+              			],
               			"repository": "https://github.com/volkovasystems/doubt.git",
               			"test": "doubt-test.js",
               			"global": true
@@ -56,11 +57,10 @@
               			"json": "circular-json",
               			"khount": "khount",
               			"protype": "protype",
-              			"stringe": "stringe",
               			"truly": "truly"
               		}
               	@end-include
-              */var _iterator = require("babel-runtime/core-js/symbol/iterator");var _iterator2 = _interopRequireDefault(_iterator);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _keys = require("babel-runtime/core-js/object/keys");var _keys2 = _interopRequireDefault(_keys);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              */var _iterator = require("babel-runtime/core-js/symbol/iterator");var _iterator2 = _interopRequireDefault(_iterator);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _keys = require("babel-runtime/core-js/object/keys");var _keys2 = _interopRequireDefault(_keys);var _typeof2 = require("babel-runtime/helpers/typeof");var _typeof3 = _interopRequireDefault(_typeof2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var cemento = require("cemento");
 var falzy = require("falzy");
@@ -68,7 +68,6 @@ var harden = require("harden");
 var json = require("circular-json");
 var khount = require("khount");
 var protype = require("protype");
-var stringe = require("stringe");
 var truly = require("truly");
 
 var ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -125,17 +124,17 @@ var doubt = function doubt(array, condition) {
 			doubt(array, ARRAY_LIKE) || doubt(array, ITERABLE);
 
 		} else if (condition == ARGUMENTS) {
-			return protype(array, OBJECT) &&
-			ARGUMENTS_CLASS_PATTERN.test(stringe(array));
+			return (typeof array === "undefined" ? "undefined" : (0, _typeof3.default)(array)) == "object" &&
+			ARGUMENTS_CLASS_PATTERN.test(array.toString());
 
 		} else if (condition == ARRAY_LIKE) {
 			var key = (0, _keys2.default)(array);
 
-			return protype(array.length, NUMBER) && key.length > 0 &&
-			key.some(function (index) {return protype(index, NUMBER);});
+			return (0, _typeof3.default)(array.length) == NUMBER && key.length > 0 &&
+			key.some(function (index) {return (typeof index === "undefined" ? "undefined" : (0, _typeof3.default)(index)) == NUMBER;});
 
 		} else if (condition == ITERABLE) {
-			return protype(_symbol2.default, FUNCTION) && protype(_iterator2.default, SYMBOL) &&
+			return (typeof _symbol2.default === "undefined" ? "undefined" : (0, _typeof3.default)(_symbol2.default)) == FUNCTION && (0, _typeof3.default)(_iterator2.default) == SYMBOL &&
 			truly(array[_iterator2.default]);
 
 		} else {

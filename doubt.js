@@ -34,10 +34,11 @@
 			"file": "doubt.js",
 			"module": "doubt",
 			"author": "Richeve S. Bebedor",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
 			"eMail": "richeve.bebedor@gmail.com",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+				"Vinse Vinalon <vinsevinalon@gmail.com>"
+			],
 			"repository": "https://github.com/volkovasystems/doubt.git",
 			"test": "doubt-test.js",
 			"global": true
@@ -56,7 +57,6 @@
 			"json": "circular-json",
 			"khount": "khount",
 			"protype": "protype",
-			"stringe": "stringe",
 			"truly": "truly"
 		}
 	@end-include
@@ -68,7 +68,6 @@ const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
 const protype = require( "protype" );
-const stringe = require( "stringe" );
 const truly = require( "truly" );
 
 const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -125,17 +124,17 @@ const doubt = function doubt( array, condition ){
 				doubt( array, ARRAY_LIKE ) || doubt( array, ITERABLE ) );
 
 		}else if( condition == ARGUMENTS ){
-			return ( protype( array, OBJECT ) &&
-				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) ) );
+			return ( typeof array == "object" &&
+				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) ) );
 
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );
 
-			return ( protype( array.length, NUMBER ) && key.length > 0 &&
-				key.some( ( index ) => protype( index, NUMBER ) ) );
+			return ( typeof array.length == NUMBER && key.length > 0 &&
+				key.some( ( index ) => typeof index == NUMBER ) );
 
 		}else if( condition == ITERABLE ){
-			return ( protype( Symbol, FUNCTION ) && protype( Symbol.iterator, SYMBOL ) &&
+			return ( typeof Symbol == FUNCTION && typeof Symbol.iterator == SYMBOL &&
 				truly( array[ Symbol.iterator ] ) );
 
 		}else{

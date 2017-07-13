@@ -6,7 +6,6 @@ falzy \
 harden \
 khount \
 protype \
-stringe \
 truly \
 --save && \
 yarn add \
@@ -24,7 +23,6 @@ falzy \
 harden \
 khount \
 protype \
-stringe \
 truly \
 --save \
 --force-latest
