@@ -56,6 +56,7 @@
 			"harden": "harden",
 			"json": "circular-json",
 			"khount": "khount",
+			"stringe": "stringe",
 			"truly": "truly"
 		}
 	@end-include
@@ -66,6 +67,7 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
+const stringe = require( "stringe" );
 const truly = require( "truly" );
 
 const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -133,7 +135,13 @@ const doubt = function doubt( array, condition ){
 		}else if( condition == ARGUMENTS ){
 			return (
 				typeof array == "object" &&
-				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) )
+				/*;
+					@note:
+						Do not change this, this should always use stringe!
+						Or else other modules will break.
+					@end-note
+				*/
+				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) )
 			);
 
 		}else if( condition == ARRAY_LIKE ){
