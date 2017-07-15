@@ -56,7 +56,7 @@
               			"harden": "harden",
               			"json": "circular-json",
               			"khount": "khount",
-              			"protype": "protype",
+              			"stringe": "stringe",
               			"truly": "truly"
               		}
               	@end-include
@@ -67,7 +67,7 @@ var falzy = require("falzy");
 var harden = require("harden");
 var json = require("circular-json");
 var khount = require("khount");
-var protype = require("protype");
+var stringe = require("stringe");
 var truly = require("truly");
 
 var ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -99,15 +99,20 @@ var doubt = function doubt(array, condition) {
                                               	@end-meta-configuration
                                               */
 
-	if (falzy(array) ||
-	protype(array, STRING, NUMBER, BOOLEAN, SYMBOL) ||
+	if (
+	falzy(array) ||
+	typeof array == "string" ||
+	typeof array == "number" ||
+	typeof array == "boolean" ||
+	(typeof array === "undefined" ? "undefined" : (0, _typeof3.default)(array)) == "symbol" ||
 	khount(array) == 0 && json.stringify(array) === "{}")
 	{
 		return false;
 	}
 
 	if (arguments.length === 2) {
-		if (condition !== ARRAY &&
+		if (
+		condition !== ARRAY &&
 		condition !== AS_ARRAY &&
 		condition !== ARGUMENTS &&
 		condition !== ARRAY_LIKE &&
@@ -120,22 +125,40 @@ var doubt = function doubt(array, condition) {
 			return Array.isArray(array);
 
 		} else if (condition == AS_ARRAY) {
-			return doubt(array, ARRAY) || doubt(array, ARGUMENTS) ||
-			doubt(array, ARRAY_LIKE) || doubt(array, ITERABLE);
+			return (
+				doubt(array, ARRAY) ||
+				doubt(array, ARGUMENTS) ||
+				doubt(array, ITERABLE) ||
+				doubt(array, ARRAY_LIKE));
+
 
 		} else if (condition == ARGUMENTS) {
-			return (typeof array === "undefined" ? "undefined" : (0, _typeof3.default)(array)) == "object" &&
-			ARGUMENTS_CLASS_PATTERN.test(array.toString());
+			return (
+				(typeof array === "undefined" ? "undefined" : (0, _typeof3.default)(array)) == "object" &&
+				/*;
+                                                                                               	@note:
+                                                                                               		Do not change this, this should always use stringe!
+                                                                                               		Or else other modules will break.
+                                                                                               	@end-note
+                                                                                               */
+				ARGUMENTS_CLASS_PATTERN.test(stringe(array)));
+
 
 		} else if (condition == ARRAY_LIKE) {
 			var key = (0, _keys2.default)(array);
 
-			return (0, _typeof3.default)(array.length) == NUMBER && key.length > 0 &&
-			key.some(function (index) {return (typeof index === "undefined" ? "undefined" : (0, _typeof3.default)(index)) == NUMBER;});
+			return (
+				typeof array.length == "number" &&
+				key.length > 0 &&
+				key.some(function (index) {return typeof index == "number";}));
+
 
 		} else if (condition == ITERABLE) {
-			return (typeof _symbol2.default === "undefined" ? "undefined" : (0, _typeof3.default)(_symbol2.default)) == FUNCTION && (0, _typeof3.default)(_iterator2.default) == SYMBOL &&
-			truly(array[_iterator2.default]);
+			return (
+				typeof _symbol2.default == "function" &&
+				(0, _typeof3.default)(_iterator2.default) == "symbol" &&
+				truly(array[_iterator2.default]));
+
 
 		} else {
 			return false;

@@ -56,7 +56,7 @@
 			"harden": "harden",
 			"json": "circular-json",
 			"khount": "khount",
-			"protype": "protype",
+			"stringe": "stringe",
 			"truly": "truly"
 		}
 	@end-include
@@ -67,7 +67,7 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const json = require( "circular-json" );
 const khount = require( "khount" );
-const protype = require( "protype" );
+const stringe = require( "stringe" );
 const truly = require( "truly" );
 
 const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
@@ -99,20 +99,25 @@ const doubt = function doubt( array, condition ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( array ) ||
-		protype( array, STRING, NUMBER, BOOLEAN, SYMBOL ) ||
-		( khount( array ) == 0 && json.stringify( array ) === "{}" ) )
-	{
+	if(
+		falzy( array ) ||
+		typeof array == "string" ||
+		typeof array == "number" ||
+		typeof array == "boolean" ||
+		typeof array == "symbol" ||
+		( khount( array ) == 0 && json.stringify( array ) === "{}" )
+	){
 		return false;
 	}
 
 	if( arguments.length === 2 ){
-		if( condition !== ARRAY &&
+		if(
+			condition !== ARRAY &&
 			condition !== AS_ARRAY &&
 			condition !== ARGUMENTS &&
 			condition !== ARRAY_LIKE &&
-			condition !== ITERABLE )
-		{
+			condition !== ITERABLE
+		){
 			throw new Error( "invalid condition" );
 		}
 
@@ -120,22 +125,40 @@ const doubt = function doubt( array, condition ){
 			return Array.isArray( array );
 
 		}else if( condition == AS_ARRAY ){
-			return ( doubt( array, ARRAY ) || doubt( array, ARGUMENTS ) ||
-				doubt( array, ARRAY_LIKE ) || doubt( array, ITERABLE ) );
+			return (
+				doubt( array, ARRAY ) ||
+				doubt( array, ARGUMENTS ) ||
+				doubt( array, ITERABLE ) ||
+				doubt( array, ARRAY_LIKE )
+			);
 
 		}else if( condition == ARGUMENTS ){
-			return ( typeof array == "object" &&
-				ARGUMENTS_CLASS_PATTERN.test( array.toString( ) ) );
+			return (
+				typeof array == "object" &&
+				/*;
+					@note:
+						Do not change this, this should always use stringe!
+						Or else other modules will break.
+					@end-note
+				*/
+				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) )
+			);
 
 		}else if( condition == ARRAY_LIKE ){
 			let key = Object.keys( array );
 
-			return ( typeof array.length == NUMBER && key.length > 0 &&
-				key.some( ( index ) => typeof index == NUMBER ) );
+			return (
+				typeof array.length == "number" &&
+				key.length > 0 &&
+				key.some( ( index ) => ( typeof index == "number" ) )
+			);
 
 		}else if( condition == ITERABLE ){
-			return ( typeof Symbol == FUNCTION && typeof Symbol.iterator == SYMBOL &&
-				truly( array[ Symbol.iterator ] ) );
+			return (
+				typeof Symbol == "function" &&
+				typeof Symbol.iterator == "symbol" &&
+				truly( array[ Symbol.iterator ] )
+			);
 
 		}else{
 			return false;

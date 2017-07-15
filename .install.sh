@@ -5,7 +5,7 @@ circular-json \
 falzy \
 harden \
 khount \
-protype \
+stringe \
 truly \
 --save && \
 yarn add \
@@ -22,7 +22,7 @@ circular-json \
 falzy \
 harden \
 khount \
-protype \
+stringe \
 truly \
 --save \
 --force-latest
