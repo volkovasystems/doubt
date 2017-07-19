@@ -1,13 +1,19 @@
 {
 	"name": "doubt",
-	"version": "0.31.0",
+	"version": "0.32.0",
 	"description": "Checks entity if array, arguments, iterable or array-like.",
 	"main": "doubt.js",
 	"support": "doubt.support.js",
 	"deploy": "doubt.deploy.js",
 	"browser": "doubt.deploy.js",
 	"scripts": {
-		"build": "babel doubt.js --out-file doubt.support.js --source-maps && webpack --progress --display-modules",
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"build:support": "gulp --module doubt --all",
+		"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+		"rebuild": "npm run build:support && npm run build:deploy",
+		"build": "npm run pristine && npm run rebuild",
 		"test": "mocha doubt-test.js"
 	},
 	"repository": {
