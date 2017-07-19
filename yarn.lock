@@ -925,13 +925,13 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
-cemento@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.16.0.tgz#f01b603b50437b182fba2478c7882d13019e3638"
+cemento@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/cemento/-/cemento-0.17.0.tgz#1518e17497e3cf1c46e4c13d1a25a3fc08768691"
   dependencies:
     babel-runtime "^6.23.0"
-    harden "^0.22.0"
-    kount "^0.11.0"
+    harden "^0.23.0"
+    kount "^0.12.0"
 
 center-align@^0.1.1:
   version "0.1.3"
@@ -1571,9 +1571,9 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
-falzy@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.20.0.tgz#3835232fb4c16702cfefd240e671381a13111de8"
+falzy@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/falzy/-/falzy-0.23.0.tgz#fec52a7df6e80adaf47bb89d47ca5a714566b664"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -2076,9 +2076,9 @@ har-validator@~4.2.1:
     ajv "^4.9.1"
     har-schema "^1.0.5"
 
-harden@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/harden/-/harden-0.22.0.tgz#1bcd6cdfd8ce60726009053981b9b37875a2404b"
+harden@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/harden/-/harden-0.23.0.tgz#cfe6aaa2f30ad4b27d87fb3fe4a4090fca880b33"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -2498,9 +2498,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
-khount@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/khount/-/khount-0.1.0.tgz#c753b769d329f1f2f481cf6d12ed418edceb67b9"
+khount@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/khount/-/khount-0.2.0.tgz#25b9d30702a60077d3adb144440da72c8b081c7d"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -2522,9 +2522,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-kount@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/kount/-/kount-0.11.0.tgz#99775ed4a1b096e8ef5547f60d63e59f1d3e5b84"
+kount@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/kount/-/kount-0.12.0.tgz#bc68c0c931b171383d846ede48e20c478af6a58d"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -3951,9 +3951,9 @@ string_decoder@~1.0.3:
   dependencies:
     safe-buffer "~5.1.0"
 
-stringe@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.4.0.tgz#15a7562633093f77b5e65903ddf89d6537e48c24"
+stringe@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/stringe/-/stringe-0.5.0.tgz#7b2e25c7a652bb67dd2e573f203bb2a21d72e66d"
   dependencies:
     babel-runtime "^6.23.0"
 
@@ -4166,9 +4166,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-truly@^0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/truly/-/truly-0.19.0.tgz#776080d30870549d62dcf258588287f403aa814e"
+truly@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/truly/-/truly-0.20.0.tgz#d751565112b9408b3ea007ea7919e900d2856992"
   dependencies:
     babel-runtime "^6.23.0"
 
