@@ -1,8 +1,44 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./doubt.deploy.js">
-		</script>
+		<title>doubt unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./doubt.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "doubt unit test", function( assert ) {
+
+				assert.equal( doubt( [ ], ARRAY ), true, "should be true" );
+
+				assert.equal( doubt( arguments, ARGUMENTS ), true, "should be true" );
+
+				assert.equal( doubt( arguments, ITERABLE ), true, "should be true" );
+
+				assert.equal( doubt( [ { "option": { "name": "jlm" } } ], ITERABLE ), true, "should be true" );
+
+				assert.equal( doubt( [ { [ Symbol.for( "hello" ) ]: "test" } ], ITERABLE ), true, "should be true" );
+
+				assert.equal( doubt( ( ( ) => arguments )( ), ARGUMENTS ), true, "should be true" );
+
+				assert.equal( doubt( [ { } ], ARRAY_LIKE ), false, "should be false" );
+
+				assert.equal( doubt( Infinity, AS_ARRAY ), false, "should be false" );
+
+				assert.equal( doubt( NaN, AS_ARRAY ), false, "should be false" );
+
+				assert.equal( doubt( false, AS_ARRAY ), false, "should be false" );
+
+			} );
+		</script>
+	</body>
 </html>
