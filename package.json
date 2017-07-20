@@ -1,54 +1,76 @@
 {
-  "name": "doubt",
-  "version": "0.30.0",
-  "description": "Checks entity if array, arguments, iterable or array-like.",
-  "main": "doubt.js",
-  "support": "doubt.support.js",
-  "deploy": "doubt.deploy.js",
-  "browser": "doubt.deploy.js",
-  "scripts": {
-    "build": "babel doubt.js --out-file doubt.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha doubt-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/doubt.git"
-  },
-  "keywords": [
-    "check",
-    "entity",
-    "array",
-    "arguments",
-    "iterable",
-    "array-like",
-    "doubt"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/doubt/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/doubt#readme",
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "cemento": "^0.16.0",
-    "circular-json": "^0.3.1",
-    "falzy": "^0.20.0",
-    "harden": "^0.22.0",
-    "khount": "^0.1.0",
-    "protype": "^0.22.0",
-    "truly": "^0.19.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.1.0"
-  }
+	"name": "doubt",
+	"version": "0.33.0",
+	"description": "Checks entity if array, arguments, iterable or array-like.",
+	"main": "doubt.js",
+	"support": "doubt.support.js",
+	"deploy": "doubt.deploy.js",
+	"browser": "doubt.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"build:support": "gulp --module doubt --all",
+		"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+		"rebuild": "npm run build:support && npm run build:deploy",
+		"build": "npm run pristine && npm run rebuild",
+		"test": "mocha doubt-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/doubt.git"
+	},
+	"keywords": [
+		"check",
+		"entity",
+		"array",
+		"arguments",
+		"iterable",
+		"array-like",
+		"doubt"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/doubt/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/doubt#readme",
+	"dependencies": {
+		"babel-runtime": "^6.23.0",
+		"cemento": "^0.17.0",
+		"circular-json": "^0.3.1",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"khount": "^0.2.0",
+		"stringe": "^0.5.0",
+		"truly": "^0.20.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"electron": "^1.6.11",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^6.1.2",
+		"gulp-changed": "^3.1.0",
+		"gulp-debug": "^3.1.0",
+		"gulp-plumber": "^1.1.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-replace": "^0.6.1",
+		"gulp-sourcemaps": "^2.6.0",
+		"mocha": "^3.4.2",
+		"should": "^11.2.1",
+		"source-map-loader": "^0.2.1",
+		"wdio-json-reporter": "^0.2.1",
+		"wdio-mocha-framework": "^0.5.10",
+		"wdio-selenium-standalone-service": "^0.0.9",
+		"webdriverio": "^4.8.0",
+		"webpack": "^3.3.0",
+		"yargs": "^8.0.2"
+	}
 }

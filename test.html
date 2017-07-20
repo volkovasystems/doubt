@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>doubt unit test</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Doubt QUnit Example</title>
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-	<script type="application/javascript" src="./doubt.deploy.js"></script>
-</head>
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
 
-<body>
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
-	<script>
-		QUnit.test("equal test", function (assert) {
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./doubt.deploy.js"></script>
+	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "doubt unit test", function( assert ) {
+
 				assert.equal( doubt( [ ], ARRAY ), true, "should be true" );
 
 				assert.equal( doubt( arguments, ARGUMENTS ), true, "should be true" );
@@ -34,8 +37,8 @@
 				assert.equal( doubt( NaN, AS_ARRAY ), false, "should be false" );
 
 				assert.equal( doubt( false, AS_ARRAY ), false, "should be false" );
-		});
-	</script>
-</body>
 
+			} );
+		</script>
+	</body>
 </html>
