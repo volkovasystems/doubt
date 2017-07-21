@@ -1,6 +1,6 @@
 {
 	"name": "doubt",
-	"version": "0.33.0",
+	"version": "0.34.0",
 	"description": "Checks entity if array, arguments, iterable or array-like.",
 	"main": "doubt.deploy.js",
 	"support": "doubt.support.js",
