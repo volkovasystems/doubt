@@ -1,0 +1,970 @@
+{
+	"stats": {
+		"suites": 69,
+		"tests": 68,
+		"passes": 68,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-07-21T03:05:53.547Z",
+		"end": "2017-07-21T03:05:53.559Z",
+		"duration": 12
+	},
+	"tests": [
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ITERABLE )` should return true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ITERABLE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARGUMENTS )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ITERABLE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ARGUMENTS )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ITERABLE )` should return true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( [ ], ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, AS_ARRAY )` should return false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], ITERABLE )` should return true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ ], AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], ITERABLE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( [ 1, 2, 3 ], AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARGUMENTS )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ITERABLE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ARGUMENTS )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), ITERABLE )` should return true",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( 'hello', 'world' ), AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARRAY_LIKE )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return true",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, AS_ARRAY )` should return true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( [ ], ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( ( function( ){ return arguments; } )( ), ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'length': 0 }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 'hello world', AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 123, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( 0, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( Infinity, AS_ARRAY )` should return false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( NaN, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( true, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( false, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { }, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARGUMENTS )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ARRAY_LIKE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, ITERABLE )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return false",
+			"fullTitle": "doubt `doubt( { 'hello': 'world' }, AS_ARRAY )` should return false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}

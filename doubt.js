@@ -54,8 +54,6 @@
 			"cemento": "cemento",
 			"falzy": "falzy",
 			"harden": "harden",
-			"json": "circular-json",
-			"khount": "khount",
 			"stringe": "stringe",
 			"truly": "truly"
 		}
@@ -65,12 +63,8 @@
 const cemento = require( "cemento" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
-const json = require( "circular-json" );
-const khount = require( "khount" );
 const stringe = require( "stringe" );
 const truly = require( "truly" );
-
-const ARGUMENTS_CLASS_PATTERN = /^\[object Arguments\]$/;
 
 harden( "ARRAY", "array" );
 harden( "ARGUMENTS", "arguments" );
@@ -78,13 +72,15 @@ harden( "ARRAY_LIKE", "array-like" );
 harden( "AS_ARRAY", "as-array" );
 harden( "ITERABLE", "iterable" );
 
+const ARGUMENTS_PATTERN = /^\[object Arguments\]$/;
+
 const doubt = function doubt( array, condition ){
 	/*;
 		@meta-configuration:
 			{
 				"array:required": [
 					"[*]",
-					"Array",
+					Array,
 					"Arguments"
 				],
 				"condition": [
@@ -99,18 +95,17 @@ const doubt = function doubt( array, condition ){
 		@end-meta-configuration
 	*/
 
-	if(
-		falzy( array ) ||
-		typeof array == "string" ||
-		typeof array == "number" ||
-		typeof array == "boolean" ||
-		typeof array == "symbol" ||
-		( khount( array ) == 0 && json.stringify( array ) === "{}" )
-	){
-		return false;
-	}
+	if( arguments.length == 2 ){
+		if(
+			falzy( array ) ||
+			typeof array == "string" ||
+			typeof array == "number" ||
+			typeof array == "boolean" ||
+			typeof array == "symbol"
+		){
+			return false;
+		}
 
-	if( arguments.length === 2 ){
 		if(
 			condition !== ARRAY &&
 			condition !== AS_ARRAY &&
@@ -128,8 +123,8 @@ const doubt = function doubt( array, condition ){
 			return (
 				doubt( array, ARRAY ) ||
 				doubt( array, ARGUMENTS ) ||
-				doubt( array, ITERABLE ) ||
-				doubt( array, ARRAY_LIKE )
+				doubt( array, ARRAY_LIKE ) ||
+				doubt( array, ITERABLE )
 			);
 
 		}else if( condition == ARGUMENTS ){
@@ -141,30 +136,36 @@ const doubt = function doubt( array, condition ){
 						Or else other modules will break.
 					@end-note
 				*/
-				ARGUMENTS_CLASS_PATTERN.test( stringe( array ) )
+				ARGUMENTS_PATTERN.test( stringe( array ) )
 			);
 
 		}else if( condition == ARRAY_LIKE ){
-			let key = Object.keys( array );
-
-			return (
-				typeof array.length == "number" &&
-				key.length > 0 &&
-				key.some( ( index ) => ( typeof index == "number" ) )
-			);
+			return ( typeof array.length == "number" );
 
 		}else if( condition == ITERABLE ){
-			return (
-				typeof Symbol == "function" &&
-				typeof Symbol.iterator == "symbol" &&
-				truly( array[ Symbol.iterator ] )
-			);
+			return truly( array[ Symbol.iterator ] );
 
 		}else{
 			return false;
 		}
 
-	}else{
+	}else if( arguments.length == 1 ){
+		if(
+			falzy( array ) ||
+			typeof array == "string" ||
+			typeof array == "number" ||
+			typeof array == "boolean" ||
+			typeof array == "symbol"
+		){
+			return cemento( {
+				"ARRAY": false,
+				"AS_ARRAY": false,
+				"ARGUMENTS": false,
+				"ARRAY_LIKE": false,
+				"ITERABLE": false
+			} );
+		}
+
 		return cemento( {
 			"ARRAY": doubt( array, ARRAY ),
 			"AS_ARRAY": doubt( array, AS_ARRAY ),
@@ -172,6 +173,9 @@ const doubt = function doubt( array, condition ){
 			"ARRAY_LIKE": doubt( array, ARRAY_LIKE ),
 			"ITERABLE": doubt( array, ITERABLE )
 		} );
+
+	}else{
+		throw new Error( "invalid parameter" );
 	}
 };
 
