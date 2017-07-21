@@ -1,10 +1,8 @@
 yarn add \
 babel-runtime \
 cemento \
-circular-json \
 falzy \
 harden \
-khount \
 stringe \
 truly \
 --save && \
@@ -34,10 +32,8 @@ yargs \
 --dev && \
 bower install \
 cemento \
-circular-json \
 falzy \
 harden \
-khount \
 stringe \
 truly \
 --save \
