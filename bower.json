@@ -1,39 +1,37 @@
 {
-  "name": "doubt",
-  "version": "0.30.0",
-  "description": "Checks entity if array, arguments, iterable or array-like.",
-  "main": "doubt.deploy.js",
-  "support": "doubt.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "check",
-    "entity",
-    "array",
-    "arguments",
-    "iterable",
-    "array-like",
-    "doubt"
-  ],
-  "homepage": "https://github.com/volkovasystems/doubt",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "cemento": "^0.16.0",
-    "circular-json": "^0.3.1",
-    "falzy": "^0.20.0",
-    "harden": "^0.22.0",
-    "khount": "^0.1.0",
-    "protype": "^0.22.0",
-    "truly": "^0.19.0"
-  }
+	"name": "doubt",
+	"version": "0.34.0",
+	"description": "Checks entity if array, arguments, iterable or array-like.",
+	"main": "doubt.deploy.js",
+	"support": "doubt.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"check",
+		"entity",
+		"array",
+		"arguments",
+		"iterable",
+		"array-like",
+		"doubt"
+	],
+	"homepage": "https://github.com/volkovasystems/doubt",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"cemento": "^0.17.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"stringe": "^0.5.0",
+		"truly": "^0.20.0"
+	}
 }
